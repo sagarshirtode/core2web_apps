@@ -1,4 +1,6 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TodoUiCreen extends StatefulWidget {
   const TodoUiCreen({super.key});
@@ -8,7 +10,7 @@ class TodoUiCreen extends StatefulWidget {
 }
 
 class _TodoUiCreenState extends State<TodoUiCreen> {
-  List cardColorsList = [
+  List cardColorsList = const [
     Color.fromRGBO(250, 232, 232, 1),
     Color.fromRGBO(232, 237, 250, 1),
     Color.fromRGBO(250, 249, 232, 1),
@@ -27,44 +29,66 @@ class _TodoUiCreenState extends State<TodoUiCreen> {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Text("Create TO-DO Task")],
+                  children: [
+                    Text(
+                      "Create TO-DO Task",
+                      style: GoogleFonts.quicksand(
+                          fontSize: 22, fontWeight: FontWeight.w600),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 20,
+                const SizedBox(height: 20),
+                Text(
+                  "Title",
+                  style: GoogleFonts.quicksand(
+                    fontSize: 18,
+                    color: const Color.fromRGBO(2, 167, 177, 1.0),
+                  ),
                 ),
-                Text("Title"),
                 TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color.fromRGBO(2, 167, 177, 1.0),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
-                Text("Description"),
+                const SizedBox(height: 20),
+                Text(
+                  "Description",
+                  style: GoogleFonts.quicksand(
+                    fontSize: 18,
+                    color: const Color.fromRGBO(2, 167, 177, 1.0),
+                  ),
+                ),
                 TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color.fromRGBO(2, 167, 177, 1.0),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
-                Text("Date"),
+                const SizedBox(height: 20),
+                Text(
+                  "Date",
+                  style: GoogleFonts.quicksand(
+                    fontSize: 18,
+                    color: const Color.fromRGBO(2, 167, 177, 1.0),
+                  ),
+                ),
                 TextField(
                   decoration: InputDecoration(
-                    suffixIcon: Icon(
+                    suffixIcon: const Icon(
                       Icons.calendar_month_outlined,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Color.fromRGBO(2, 167, 177, 1.0),
                       ),
                     ),
@@ -91,9 +115,13 @@ class _TodoUiCreenState extends State<TodoUiCreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(2, 167, 177, 1.0),
-        title: const Text(
+        title: Text(
           'To-do list',
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.quicksand(
+            fontSize: 30,
+            fontWeight: FontWeight.w700,
+            color: Color.fromRGBO(255, 255, 255, 1.0),
+          ),
         ),
       ),
       body: ListView.builder(
